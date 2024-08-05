@@ -39,7 +39,7 @@ def create_llm_chain():
         if not groq_api_key:
             raise ValueError("GROQ API Key is missing")
 
-        llm = ChatGroq(groq_api_key=groq_api_key, model_name="gpt-3")
+        llm = ChatGroq(groq_api_key=groq_api_key, model_name="gemma2-9b-it")
 
         prompt = ChatPromptTemplate.from_template(
             """

@@ -2,14 +2,14 @@
 
 import pickle
 import time
-from langchain_openai import OpenAIEmbeddings
+from langchain_community.embeddings import OllamaEmbeddings
 from langchain_community.vectorstores import FAISS
 from langchain_community.document_loaders import PyPDFDirectoryLoader
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 from components.exception import CustomException
 import sys
 
-def create_vector_embedding(output_path="vector_embedding.pkl", documents_path="knowledge_base", model_name="gpt-3"):
+def create_vector_embedding(output_path="vector_embedding.pkl", documents_path="knowledge_base", model_name="nomic-embed-text"):
     """
     Creates vector embeddings from documents and saves them as a pickle file.
     Parameters:
@@ -20,7 +20,7 @@ def create_vector_embedding(output_path="vector_embedding.pkl", documents_path="
     try:
         start_time = time.time()
         
-        embeddings = OpenAIEmbeddings(model=model_name)
+        embeddings = OllamaEmbeddings(model=model_name)
 
         loader = PyPDFDirectoryLoader(documents_path)
         docs = loader.load()
@@ -45,6 +45,6 @@ def create_vector_embedding(output_path="vector_embedding.pkl", documents_path="
 
 if __name__ == "__main__":
     try:
-        create_vector_embedding(output_path="vector_embedding.pkl", documents_path="knowledge_base", model_name="gpt-3")
+        create_vector_embedding(output_path="vector_embedding.pkl", documents_path="knowledge_base", model_name="nomic-embed-text")
     except Exception as e:
         raise CustomException(e, sys)
