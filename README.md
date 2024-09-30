@@ -89,3 +89,13 @@ Custom styles used to make the web application visually appealing, ensuring a mo
 ## Acknowledgments
 
 - **Pt. Radhakrishna Shrimali’s Lal Kitab**: A traditional source of astrological knowledge used for creating the astrological knowledge base embedded in the app.
+
+## About Me
+
+Hello, I'm Akhilesh Thapliyal!
+
+## Contact
+
+- **Email:** akhilesh.thedev@gmail.com
+- **LinkedIn:** www.linkedin.com/in/akhilesh-thapliyal
+- **GitHub:** https://github.com/The-Akhilesh-Thapliyal
